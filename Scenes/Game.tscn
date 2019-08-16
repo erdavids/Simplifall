@@ -1,942 +1,489 @@
-[gd_scene load_steps=27 format=2]
+[gd_scene load_steps=28 format=2]
 
-[ext_resource path="res://Scenes/Game.gd" type="Script" id=1]
-[ext_resource path="res://Scenes/UI.gd" type="Script" id=2]
+[ext_resource path="res://Scripts/Game.gd" type="Script" id=1]
+[ext_resource path="res://Scripts/UI.gd" type="Script" id=2]
 [ext_resource path="res://Fonts/Gugi-Regular.ttf" type="DynamicFontData" id=3]
-[ext_resource path="res://Scenes/MenuButtons.gd" type="Script" id=4]
-[ext_resource path="res://Scenes/Score.gd" type="Script" id=5]
-[ext_resource path="res://Scenes/Buttons.gd" type="Script" id=6]
-[ext_resource path="res://Sprites/Basic/BlueButton.png" type="Texture" id=7]
-[ext_resource path="res://Sprites/Basic/OrangeButton.png" type="Texture" id=8]
-[ext_resource path="res://Sprites/Basic/DiffGreenButton.png" type="Texture" id=9]
-[ext_resource path="res://Sprites/Basic/DiffRedButton.png" type="Texture" id=10]
-[ext_resource path="res://Sprites/Basic/DiffBlueButton.png" type="Texture" id=11]
-[ext_resource path="res://Sprites/Basic/PurpleButton.png" type="Texture" id=12]
-[ext_resource path="res://Sprites/Basic/YellowButton.png" type="Texture" id=13]
-[ext_resource path="res://Sprites/Basic/GreenButton.png" type="Texture" id=14]
-[ext_resource path="res://Sprites/Basic/RedButton.png" type="Texture" id=15]
-[ext_resource path="res://Sprites/Basic/Banner.png" type="Texture" id=16]
-[ext_resource path="res://Scenes/Area2D.gd" type="Script" id=17]
-[ext_resource path="res://Sprites/Basic/TopButton.png" type="Texture" id=18]
-[ext_resource path="res://Scenes/LeftArrow.gd" type="Script" id=19]
-[ext_resource path="res://Scenes/MiddleArrow.gd" type="Script" id=20]
-[ext_resource path="res://Scenes/RightArrow.gd" type="Script" id=21]
-[ext_resource path="res://Scenes/Emitters.gd" type="Script" id=22]
+[ext_resource path="res://Scripts/MenuButtons.gd" type="Script" id=4]
+[ext_resource path="res://Scenes/font.tres" type="DynamicFont" id=5]
+[ext_resource path="res://Scripts/Score.gd" type="Script" id=6]
+[ext_resource path="res://Scripts/Buttons.gd" type="Script" id=7]
+[ext_resource path="res://Sprites/Basic/Banner.png" type="Texture" id=8]
+[ext_resource path="res://Scripts/Area2D.gd" type="Script" id=9]
+[ext_resource path="res://Sprites/Basic/OrangeButton.png" type="Texture" id=10]
+[ext_resource path="res://Scripts/Color.gd" type="Script" id=11]
+[ext_resource path="res://Sprites/Basic/BlueButton.png" type="Texture" id=12]
+[ext_resource path="res://Sprites/Basic/DiffGreenButton.png" type="Texture" id=13]
+[ext_resource path="res://Sprites/Basic/DiffRedButton.png" type="Texture" id=14]
+[ext_resource path="res://Sprites/Basic/DiffBlueButton.png" type="Texture" id=15]
+[ext_resource path="res://Sprites/Basic/PurpleButton.png" type="Texture" id=16]
+[ext_resource path="res://Sprites/Basic/YellowButton.png" type="Texture" id=17]
+[ext_resource path="res://Sprites/Basic/GreenButton.png" type="Texture" id=18]
+[ext_resource path="res://Sprites/Basic/RedButton.png" type="Texture" id=19]
+[ext_resource path="res://Sprites/Basic/TopButton.png" type="Texture" id=20]
+[ext_resource path="res://Scripts/Arrow.gd" type="Script" id=21]
+[ext_resource path="res://Scripts/Emitters.gd" type="Script" id=22]
+[ext_resource path="res://Scenes/Globals.gd" type="Script" id=23]
 
 [sub_resource type="DynamicFont" id=1]
-
 size = 97
-use_mipmaps = false
-use_filter = false
 font_data = ExtResource( 3 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=2]
-
-size = 64
-use_mipmaps = false
-use_filter = false
+size = 225
 font_data = ExtResource( 3 )
-_sections_unfolded = [ "Font", "Settings" ]
 
 [sub_resource type="DynamicFont" id=3]
-
-size = 225
-use_mipmaps = false
-use_filter = false
+size = 30
 font_data = ExtResource( 3 )
-_sections_unfolded = [ "Extra Spacing", "Font", "Settings" ]
 
 [sub_resource type="RectangleShape2D" id=4]
-
-custom_solver_bias = 0.0
 extents = Vector2( 11.9737, 10 )
 
 [node name="Game" type="Node2D"]
-
 script = ExtResource( 1 )
 
-[node name="ColorRect" type="ColorRect" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="ColorRect" type="ColorRect" parent="."]
 margin_right = 576.0
 margin_bottom = 1024.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
 color = Color( 0.835294, 0.835294, 0.835294, 1 )
-_sections_unfolded = [ "Rect" ]
 
-[node name="UI" type="Node2D" parent="." index="1"]
-
+[node name="UI" type="Node2D" parent="."]
 position = Vector2( 0, 100 )
 script = ExtResource( 2 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Title" type="Label" parent="UI" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Title" type="Label" parent="UI"]
 margin_top = 150.0
 margin_right = 576.0
 margin_bottom = 300.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 custom_fonts/font = SubResource( 1 )
 custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
 text = "Simplifall"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="MenuButtons" type="Node2D" parent="UI" index="1"]
-
+[node name="MenuButtons" type="Node2D" parent="UI"]
+editor/display_folded = true
 script = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="StartButton" type="TextureButton" parent="UI/MenuButtons" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="StartButton" type="TextureButton" parent="UI/MenuButtons"]
 margin_left = 88.0
 margin_top = 350.0
 margin_right = 488.0
 margin_bottom = 440.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-_sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Start" type="Label" parent="UI/MenuButtons/StartButton" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Start" type="Label" parent="UI/MenuButtons/StartButton"]
 margin_right = 400.0
 margin_bottom = 90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
 text = "Start"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="SettingsButton" type="TextureButton" parent="UI/MenuButtons" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="SettingsButton" type="TextureButton" parent="UI/MenuButtons"]
 margin_left = 88.0
 margin_top = 440.0
 margin_right = 488.0
 margin_bottom = 530.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-_sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Settings" type="Label" parent="UI/MenuButtons/SettingsButton" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Settings" type="Label" parent="UI/MenuButtons/SettingsButton"]
 margin_right = 400.0
 margin_bottom = 90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
 text = "Settings"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="QuitButton" type="TextureButton" parent="UI/MenuButtons" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="QuitButton" type="TextureButton" parent="UI/MenuButtons"]
 margin_left = 88.0
 margin_top = 530.0
 margin_right = 488.0
 margin_bottom = 620.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-_sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Quit" type="Label" parent="UI/MenuButtons/QuitButton" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Quit" type="Label" parent="UI/MenuButtons/QuitButton"]
 margin_right = 400.0
 margin_bottom = 90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
 text = "Quit"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Tween" type="Tween" parent="UI/MenuButtons" index="3"]
+[node name="Tween" type="Tween" parent="UI/MenuButtons"]
 
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
-
-[node name="DifficultyButtons" type="Node2D" parent="UI" index="2"]
-
+[node name="DifficultyButtons" type="Node2D" parent="UI"]
+editor/display_folded = true
 position = Vector2( 576, 0 )
 script = ExtResource( 4 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="HardButton" type="TextureButton" parent="UI/DifficultyButtons" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HardButton" type="TextureButton" parent="UI/DifficultyButtons"]
 margin_left = 88.0
 margin_top = 350.0
 margin_right = 488.0
 margin_bottom = 440.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-_sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Hard" type="Label" parent="UI/DifficultyButtons/HardButton" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Hard" type="Label" parent="UI/DifficultyButtons/HardButton"]
 margin_right = 400.0
 margin_bottom = 90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
 text = "Not Easy"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="HarderButton" type="TextureButton" parent="UI/DifficultyButtons" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HarderButton" type="TextureButton" parent="UI/DifficultyButtons"]
 margin_left = 88.0
 margin_top = 440.0
 margin_right = 488.0
 margin_bottom = 530.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-_sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Harder" type="Label" parent="UI/DifficultyButtons/HarderButton" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Harder" type="Label" parent="UI/DifficultyButtons/HarderButton"]
 margin_right = 400.0
 margin_bottom = 90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
 text = "Pretty Difficult"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="HardestButton" type="TextureButton" parent="UI/DifficultyButtons" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HardestButton" type="TextureButton" parent="UI/DifficultyButtons"]
 margin_left = 88.0
 margin_top = 530.0
 margin_right = 488.0
 margin_bottom = 620.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-_sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Hardest" type="Label" parent="UI/DifficultyButtons/HardestButton" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Hardest" type="Label" parent="UI/DifficultyButtons/HardestButton"]
 margin_right = 400.0
 margin_bottom = 90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
 text = "Just Bad"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="BackButton" type="TextureButton" parent="UI/DifficultyButtons" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="BackButton" type="TextureButton" parent="UI/DifficultyButtons"]
 margin_left = 88.0
 margin_top = 670.0
 margin_right = 488.0
 margin_bottom = 760.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-_sections_unfolded = [ "Rect" ]
 __meta__ = {
 "_edit_group_": true
 }
 
-[node name="Back" type="Label" parent="UI/DifficultyButtons/BackButton" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Back" type="Label" parent="UI/DifficultyButtons/BackButton"]
 margin_right = 400.0
 margin_bottom = 90.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 2 )
+custom_fonts/font = ExtResource( 5 )
 custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
-text = "Back"
+text = "Menu"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "custom_colors", "custom_fonts" ]
 
-[node name="Tween" type="Tween" parent="UI/DifficultyButtons" index="4"]
+[node name="Tween" type="Tween" parent="UI/DifficultyButtons"]
 
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
+[node name="Tween" type="Tween" parent="UI"]
 
-[node name="Tween" type="Tween" parent="UI" index="3"]
-
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
-
-[node name="ScoreNode" type="Node2D" parent="." index="2"]
-
+[node name="ScoreNode" type="Node2D" parent="."]
+editor/display_folded = true
 position = Vector2( 0, -400 )
-script = ExtResource( 5 )
-_sections_unfolded = [ "Transform" ]
+script = ExtResource( 6 )
 
-[node name="Score" type="Label" parent="ScoreNode" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Score" type="Label" parent="ScoreNode"]
 margin_right = 576.0
 margin_bottom = 400.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-custom_fonts/font = SubResource( 3 )
+custom_fonts/font = SubResource( 2 )
 custom_colors/font_color = Color( 0.753906, 0.753906, 0.753906, 1 )
 text = "0"
 align = 1
 valign = 1
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-_sections_unfolded = [ "Rect", "Theme", "custom_colors", "custom_fonts", "custom_styles" ]
 
-[node name="Tween" type="Tween" parent="ScoreNode" index="1"]
+[node name="Tween" type="Tween" parent="ScoreNode"]
 
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
+[node name="HighScore" type="Label" parent="ScoreNode"]
+margin_left = 313.741
+margin_top = -140.658
+margin_right = 576.741
+margin_bottom = -90.6584
+grow_horizontal = 0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+text = "High Score: 0"
+align = 1
+valign = 1
 
-[node name="Buttons" type="Node2D" parent="." index="3"]
+[node name="BackButtonDifficulty" type="TextureButton" parent="ScoreNode"]
+margin_left = 7.0
+margin_top = -140.0
+margin_right = 143.0
+margin_bottom = -90.0
+__meta__ = {
+"_edit_group_": true
+}
 
+[node name="Back" type="Label" parent="ScoreNode/BackButtonDifficulty"]
+margin_left = 21.0
+margin_right = 121.0
+margin_bottom = 50.0
+grow_horizontal = 0
+custom_fonts/font = SubResource( 3 )
+custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+text = "Back"
+align = 1
+valign = 1
+
+[node name="EndOptions" type="Node2D" parent="ScoreNode"]
+position = Vector2( 576, -40 )
+script = ExtResource( 4 )
+
+[node name="RestartButton" type="TextureButton" parent="ScoreNode/EndOptions"]
+margin_left = 88.0
+margin_top = 350.0
+margin_right = 488.0
+margin_bottom = 440.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Hard" type="Label" parent="ScoreNode/EndOptions/RestartButton"]
+margin_right = 400.0
+margin_bottom = 90.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+text = "Try Again?"
+align = 1
+valign = 1
+
+[node name="Menu" type="TextureButton" parent="ScoreNode/EndOptions"]
+visible = false
+margin_left = 88.0
+margin_top = 440.0
+margin_right = 488.0
+margin_bottom = 530.0
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Harder" type="Label" parent="ScoreNode/EndOptions/Menu"]
+margin_right = 400.0
+margin_bottom = 90.0
+custom_fonts/font = ExtResource( 5 )
+custom_colors/font_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+text = "Difficulty"
+align = 1
+valign = 1
+
+[node name="Tween" type="Tween" parent="ScoreNode/EndOptions"]
+
+[node name="Buttons" type="Node2D" parent="."]
 position = Vector2( 0, 1024 )
-script = ExtResource( 6 )
-_sections_unfolded = [ "Transform" ]
+script = ExtResource( 7 )
 
-[node name="Colors" type="Node2D" parent="Buttons" index="0"]
-
-z_index = 5
-_sections_unfolded = [ "Z Index" ]
-
-[node name="TopLeftColor" type="TextureButton" parent="Buttons/Colors" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 12.0
-margin_top = 118.0
-margin_right = 156.0
-margin_bottom = 219.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 7 )
-_sections_unfolded = [ "Anchor", "Rect", "Textures" ]
-
-[node name="Orange" type="TextureButton" parent="Buttons/Colors" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 12.0
-margin_top = 230.0
-margin_right = 156.0
-margin_bottom = 331.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 8 )
-_sections_unfolded = [ "Anchor", "Rect", "Textures" ]
-
-[node name="DiffGreen" type="TextureButton" parent="Buttons/Colors" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 388.0
-margin_top = 342.0
-margin_right = 532.0
-margin_bottom = 443.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 9 )
-_sections_unfolded = [ "Anchor", "Rect", "Textures" ]
-
-[node name="DiffRed" type="TextureButton" parent="Buttons/Colors" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 12.0
-margin_top = 342.0
-margin_right = 156.0
-margin_bottom = 443.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 10 )
-_sections_unfolded = [ "Anchor", "Rect", "Textures" ]
-
-[node name="DiffBlue" type="TextureButton" parent="Buttons/Colors" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 200.0
-margin_top = 342.0
-margin_right = 344.0
-margin_bottom = 443.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 11 )
-_sections_unfolded = [ "Anchor", "Rect", "Textures" ]
-
-[node name="Purple" type="TextureButton" parent="Buttons/Colors" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 200.0
-margin_top = 230.0
-margin_right = 344.0
-margin_bottom = 331.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 12 )
-_sections_unfolded = [ "Anchor", "Rect", "Textures" ]
-
-[node name="Yellow" type="TextureButton" parent="Buttons/Colors" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-margin_left = 388.0
-margin_top = 230.0
-margin_right = 532.0
-margin_bottom = 331.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 13 )
-_sections_unfolded = [ "Anchor", "Rect", "Textures" ]
-
-[node name="TopMiddleColor" type="TextureButton" parent="Buttons/Colors" index="7"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 200.0
-margin_top = 150.0
-margin_right = 376.0
-margin_bottom = 250.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 14 )
-_sections_unfolded = [ "Rect", "Textures" ]
-
-[node name="TopRightColor" type="TextureButton" parent="Buttons/Colors" index="8"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 388.0
-margin_top = 150.0
-margin_right = 564.0
-margin_bottom = 250.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 15 )
-_sections_unfolded = [ "Anchor", "Rect", "Textures" ]
-
-[node name="Sprite" type="Sprite" parent="Buttons" index="1"]
-
+[node name="Sprite" type="Sprite" parent="Buttons"]
 position = Vector2( 288.647, 267.748 )
 z_index = 3
-texture = ExtResource( 16 )
-_sections_unfolded = [ "Offset", "Z Index" ]
+texture = ExtResource( 8 )
 
-[node name="Area2D" type="Area2D" parent="Buttons/Sprite" index="0"]
-
+[node name="Area2D" type="Area2D" parent="Buttons/Sprite"]
 position = Vector2( -0.304352, -213.099 )
 scale = Vector2( 8.8265, 0.294218 )
-input_pickable = true
-gravity_vec = Vector2( 0, 1 )
-gravity = 98.0
-linear_damp = 0.1
-angular_damp = 1.0
-audio_bus_override = false
-audio_bus_name = "Master"
-script = ExtResource( 17 )
+script = ExtResource( 9 )
 areaType = "Barrier"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Sprite/Area2D" index="0"]
-
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Buttons/Sprite/Area2D"]
 position = Vector2( -0.133953, -56.2468 )
 scale = Vector2( 2.69723, 1 )
 shape = SubResource( 4 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Tween" type="Tween" parent="Buttons" index="2"]
-
-repeat = false
-playback_process_mode = 1
-playback_speed = 1.0
-playback/active = false
-playback/repeat = false
-playback/speed = 1.0
-
-[node name="Arrows" type="Node2D" parent="Buttons" index="3"]
-
+[node name="Colors" type="Node2D" parent="Buttons"]
 z_index = 5
-_sections_unfolded = [ "Z Index" ]
 
-[node name="LeftArrow" type="TextureButton" parent="Buttons/Arrows" index="0"]
+[node name="Orange" type="TextureButton" parent="Buttons/Colors"]
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 12.0
+margin_top = 268.45
+margin_right = 188.0
+margin_bottom = 369.45
+texture_normal = ExtResource( 10 )
+script = ExtResource( 11 )
+color = "Orange"
 
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Blue" type="TextureButton" parent="Buttons/Colors"]
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 12.0
+margin_top = 156.0
+margin_right = 188.0
+margin_bottom = 257.0
+texture_normal = ExtResource( 12 )
+script = ExtResource( 11 )
+color = "Blue"
+
+[node name="DiffGreen" type="TextureButton" parent="Buttons/Colors"]
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 387.919
+margin_top = 378.588
+margin_right = 563.919
+margin_bottom = 479.588
+texture_normal = ExtResource( 13 )
+script = ExtResource( 11 )
+color = "DiffGreen"
+
+[node name="DiffRed" type="TextureButton" parent="Buttons/Colors"]
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 12.0
+margin_top = 379.319
+margin_right = 188.0
+margin_bottom = 480.319
+texture_normal = ExtResource( 14 )
+script = ExtResource( 11 )
+color = "DiffRed"
+
+[node name="DiffBlue" type="TextureButton" parent="Buttons/Colors"]
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 199.673
+margin_top = 379.156
+margin_right = 375.673
+margin_bottom = 480.156
+texture_normal = ExtResource( 15 )
+script = ExtResource( 11 )
+color = "DiffBlue"
+
+[node name="Purple" type="TextureButton" parent="Buttons/Colors"]
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 199.507
+margin_top = 268.45
+margin_right = 375.507
+margin_bottom = 369.45
+texture_normal = ExtResource( 16 )
+script = ExtResource( 11 )
+color = "Purple"
+
+[node name="Yellow" type="TextureButton" parent="Buttons/Colors"]
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = 388.454
+margin_top = 268.45
+margin_right = 564.454
+margin_bottom = 369.45
+texture_normal = ExtResource( 17 )
+script = ExtResource( 11 )
+color = "Yellow"
+
+[node name="Green" type="TextureButton" parent="Buttons/Colors"]
+margin_left = 200.0
+margin_top = 156.0
+margin_right = 376.0
+margin_bottom = 256.0
+texture_normal = ExtResource( 18 )
+script = ExtResource( 11 )
+color = "Green"
+
+[node name="Red" type="TextureButton" parent="Buttons/Colors"]
+margin_left = 388.0
+margin_top = 155.538
+margin_right = 565.131
+margin_bottom = 255.538
+texture_normal = ExtResource( 19 )
+script = ExtResource( 11 )
+color = "Red"
+
+[node name="Tween" type="Tween" parent="Buttons"]
+
+[node name="Arrows" type="Node2D" parent="Buttons"]
+z_index = 5
+
+[node name="LeftArrow" type="TextureButton" parent="Buttons/Arrows"]
 margin_left = 32.0
-margin_top = 68.0
+margin_top = 66.0
 margin_right = 168.0
-margin_bottom = 143.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 18 )
-script = ExtResource( 19 )
-_sections_unfolded = [ "Rect", "Textures" ]
+margin_bottom = 141.0
+texture_normal = ExtResource( 20 )
+script = ExtResource( 21 )
 
-[node name="MiddleArrow" type="TextureButton" parent="Buttons/Arrows" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="MiddleArrow" type="TextureButton" parent="Buttons/Arrows"]
 margin_left = 220.0
-margin_top = 68.0
+margin_top = 66.0
 margin_right = 356.0
-margin_bottom = 143.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 18 )
-script = ExtResource( 20 )
-_sections_unfolded = [ "Rect", "Textures" ]
+margin_bottom = 141.0
+texture_normal = ExtResource( 20 )
+script = ExtResource( 21 )
 
-[node name="RightArrow" type="TextureButton" parent="Buttons/Arrows" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="RightArrow" type="TextureButton" parent="Buttons/Arrows"]
 margin_left = 408.0
-margin_top = 68.0
+margin_top = 66.0
 margin_right = 544.0
 margin_bottom = 143.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-toggle_mode = false
-enabled_focus_mode = 2
-shortcut = null
-group = null
-texture_normal = ExtResource( 18 )
+texture_normal = ExtResource( 20 )
 script = ExtResource( 21 )
-_sections_unfolded = [ "Rect", "Textures" ]
 
-[node name="Emitters" type="Node2D" parent="." index="4"]
-
+[node name="Emitters" type="Node2D" parent="."]
+position = Vector2( 576, 0 )
 script = ExtResource( 22 )
 
-[node name="MiddleEmitter" type="Node2D" parent="Emitters" index="0"]
-
+[node name="MiddleEmitter" type="Node2D" parent="Emitters"]
 position = Vector2( 288, -100 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="LeftEmitter" type="Node2D" parent="Emitters" index="1"]
-
+[node name="LeftEmitter" type="Node2D" parent="Emitters"]
 position = Vector2( 100, -100 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="RightEmitter" type="Node2D" parent="Emitters" index="2"]
-
+[node name="RightEmitter" type="Node2D" parent="Emitters"]
 position = Vector2( 476, -100 )
-_sections_unfolded = [ "Transform" ]
 
-[node name="Timer" type="Timer" parent="Emitters" index="3"]
+[node name="Timer" type="Timer" parent="Emitters"]
 
-process_mode = 1
-wait_time = 1.0
-one_shot = false
-autostart = false
+[node name="Tween" type="Tween" parent="Emitters"]
 
+[node name="Globals" type="Node2D" parent="."]
+script = ExtResource( 23 )
 [connection signal="pressed" from="UI/MenuButtons/StartButton" to="." method="_on_StartButton_pressed"]
-
 [connection signal="pressed" from="UI/MenuButtons/QuitButton" to="." method="_on_QuitButton_pressed"]
-
 [connection signal="pressed" from="UI/DifficultyButtons/HardButton" to="." method="_on_HardButton_pressed"]
-
 [connection signal="pressed" from="UI/DifficultyButtons/HarderButton" to="." method="_on_HarderButton_pressed"]
-
 [connection signal="pressed" from="UI/DifficultyButtons/HardestButton" to="." method="_on_HardestButton_pressed"]
-
 [connection signal="pressed" from="UI/DifficultyButtons/BackButton" to="." method="_on_BackButton_pressed"]
-
-[connection signal="pressed" from="Buttons/Colors/TopLeftColor" to="Buttons" method="_on_TopLeftColor_pressed"]
-
-[connection signal="pressed" from="Buttons/Colors/Orange" to="Buttons" method="_on_Orange_pressed"]
-
-[connection signal="pressed" from="Buttons/Colors/DiffGreen" to="Buttons" method="_on_DiffGreen_pressed"]
-
-[connection signal="pressed" from="Buttons/Colors/DiffRed" to="Buttons" method="_on_DiffRed_pressed"]
-
-[connection signal="pressed" from="Buttons/Colors/DiffBlue" to="Buttons" method="_on_DiffBlue_pressed"]
-
-[connection signal="pressed" from="Buttons/Colors/Purple" to="Buttons" method="_on_Purple_pressed"]
-
-[connection signal="pressed" from="Buttons/Colors/Yellow" to="Buttons" method="_on_Yellow_pressed"]
-
-[connection signal="pressed" from="Buttons/Colors/TopMiddleColor" to="Buttons" method="_on_TopMiddleColor_pressed"]
-
-[connection signal="pressed" from="Buttons/Colors/TopRightColor" to="Buttons" method="_on_TopRightColor_pressed"]
-
-[connection signal="pressed" from="Buttons/Arrows/LeftArrow" to="Buttons/Arrows/LeftArrow" method="_on_LeftArrow_pressed"]
-
-[connection signal="pressed" from="Buttons/Arrows/MiddleArrow" to="Buttons/Arrows/MiddleArrow" method="_on_MiddleArrow_pressed"]
-
-[connection signal="pressed" from="Buttons/Arrows/RightArrow" to="Buttons/Arrows/RightArrow" method="_on_RightArrow_pressed"]
-
+[connection signal="pressed" from="ScoreNode/BackButtonDifficulty" to="." method="_on_BackButtonDifficulty_pressed"]
+[connection signal="pressed" from="ScoreNode/EndOptions/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="Buttons/Colors/Orange" to="Buttons/Colors/Orange" method="ChangeColor"]
+[connection signal="pressed" from="Buttons/Colors/Blue" to="Buttons/Colors/Blue" method="ChangeColor"]
+[connection signal="pressed" from="Buttons/Colors/DiffGreen" to="Buttons/Colors/DiffGreen" method="ChangeColor"]
+[connection signal="pressed" from="Buttons/Colors/DiffRed" to="Buttons/Colors/DiffRed" method="ChangeColor"]
+[connection signal="pressed" from="Buttons/Colors/DiffBlue" to="Buttons/Colors/DiffBlue" method="ChangeColor"]
+[connection signal="pressed" from="Buttons/Colors/Purple" to="Buttons/Colors/Purple" method="ChangeColor"]
+[connection signal="pressed" from="Buttons/Colors/Yellow" to="Buttons/Colors/Yellow" method="ChangeColor"]
+[connection signal="pressed" from="Buttons/Colors/Green" to="Buttons/Colors/Green" method="ChangeColor"]
+[connection signal="pressed" from="Buttons/Colors/Red" to="Buttons/Colors/Red" method="ChangeColor"]
+[connection signal="pressed" from="Buttons/Arrows/LeftArrow" to="Buttons/Arrows/LeftArrow" method="ArrowPressed"]
+[connection signal="pressed" from="Buttons/Arrows/MiddleArrow" to="Buttons/Arrows/MiddleArrow" method="ArrowPressed"]
+[connection signal="pressed" from="Buttons/Arrows/RightArrow" to="Buttons/Arrows/RightArrow" method="ArrowPressed"]
 [connection signal="timeout" from="Emitters/Timer" to="Emitters" method="_on_Timer_timeout"]
-
-

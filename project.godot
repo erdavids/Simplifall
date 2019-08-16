@@ -6,13 +6,22 @@
 ;   [section] ; section goes between []
 ;   param=value ; assign values to parameters
 
-config_version=3
+config_version=4
+
+_global_script_classes=[  ]
+_global_script_class_icons={
+
+}
 
 [application]
 
 config/name="Block Blocks"
 run/main_scene="res://Scenes/Game.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+Globals="*res://Scenes/Globals.gd"
 
 [display]
 
@@ -21,9 +30,9 @@ window/size/height=1024
 window/size/test_width=288
 window/size/test_height=512
 window/handheld/orientation="portrait"
-window/handheld/emulate_touchscreen=true
 window/stretch/mode="2d"
 window/stretch/aspect="keep_width"
+window/handheld/emulate_touchscreen=true
 
 [rendering]
 
