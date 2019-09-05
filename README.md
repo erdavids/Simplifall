@@ -11,4 +11,6 @@ Topics Involved:
 
 [Project Code Overview](https://www.youtube.com/watch?v=QHTzs50-PLk)
 
+[![ko-fi](https://www.ko-fi.com/img/githubbutton_sm.svg)](https://ko-fi.com/A0A6YGXL)
+
 <p align="center"><img src="https://github.com/erdavids/Simplifall/blob/master/Simplifall.png"></p>
